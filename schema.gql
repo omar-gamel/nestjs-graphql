@@ -1,0 +1,18 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type GqlBooleanResponse {
+  data: Boolean
+  code: Int!
+  success: Boolean!
+  message: String
+}
+
+scalar Timestamp
+
+scalar JSON
+
+type Query {
+  findUser: GqlBooleanResponse!
+}
