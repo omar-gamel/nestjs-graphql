@@ -7,9 +7,13 @@ import { ContextModule } from './_common/context/context.module';
 import { Timestamp } from './_common/graphql/timestamp.scalar';
 import { JSON } from './_common/graphql/json.scalar';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { BaseResolver } from './_common/graphql/graphql.resolver';
+import { PostsModule } from './post/posts.module';
+
 @Module({
   imports: [
     UserModule,
+    PostsModule,
     ConfigModule.forRoot({ isGlobal: true }),
     GraphQLModule.forRootAsync<ApolloDriverConfig>({
       driver: ApolloDriver,

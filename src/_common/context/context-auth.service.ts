@@ -44,7 +44,8 @@ export class ContextAuthService implements IContextAuthService {
     let { userId } = <TokenPayload>jwt.verify(token, this.config.get('JWT_SECRET'));
     // Find User By ( UserId ) From DB And Return ..
     return {
-      id: '',
+      id: 1,
+      name: 'John',
       favLang: LangEnum.AR
     };
   }

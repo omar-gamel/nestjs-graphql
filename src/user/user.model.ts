@@ -1,10 +1,14 @@
-import { Field, ID } from '@nestjs/graphql';
+import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { LangEnum } from './user.enum';
 
+@ObjectType()
 export class User {
   @Field(() => ID)
-  id: string;
+  id: number;
 
-  @Field(() => LangEnum)
-  favLang: LangEnum;
+  @Field()
+  name: string;
+
+  @Field(() => LangEnum, { nullable: true })
+  favLang?: LangEnum;
 }

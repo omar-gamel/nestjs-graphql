@@ -2,11 +2,24 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type GqlBooleanResponse {
-  data: Boolean
-  code: Int!
-  success: Boolean!
-  message: String
+type User {
+  id: ID!
+  name: String!
+  favLang: LangEnum
+}
+
+enum LangEnum {
+  EN
+  AR
+}
+
+type Post {
+  id: Int!
+  title: String!
+  content: String!
+  isDone: Boolean!
+  userId: Float!
+  createdBy: User!
 }
 
 scalar Timestamp
@@ -14,5 +27,8 @@ scalar Timestamp
 scalar JSON
 
 type Query {
-  findUser: GqlBooleanResponse!
+  findAllUser: [User!]!
+  findUser(id: Int!): User!
+  findAllPost: [Post!]!
+  findPost(id: Int!): Post!
 }
